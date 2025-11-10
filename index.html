@@ -6,29 +6,23 @@
   <title>Porsche 911 GT3 RS — Vision</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* subtle ground glow */
-    .heat:before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 35%;
-      background: radial-gradient(80% 50% at 50% 100%, rgba(255, 80, 0, 0.08), transparent 70%);
-      pointer-events: none;
+    .heat:before{
+      content:"";position:absolute;inset:0 0 auto 0;height:35%;
+      background:radial-gradient(80% 50% at 50% 100%,rgba(255,80,0,.08),transparent 70%);
+      pointer-events:none;
     }
   </style>
 </head>
-
 <body class="bg-black text-white antialiased">
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="relative min-h-screen overflow-hidden heat">
-    <!-- Background Image -->
-    <img src="./assets/porsche.jpg" alt="Porsche 911 GT3 RS side profile"
+    <!-- background -->
+    <img src="./assets/porsche-side.jpg" alt="Porsche 911 GT3 RS side profile"
          class="absolute inset-0 w-full h-full object-contain md:object-cover brightness-[.9]" />
-    <!-- Gradient overlay -->
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-    <!-- Top navigation -->
+    <!-- nav -->
     <header class="absolute top-0 inset-x-0 z-20">
       <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         <div class="font-semibold tracking-wide uppercase text-white/80">GT Vision</div>
@@ -40,11 +34,11 @@
       </div>
     </header>
 
-    <!-- Main text -->
+    <!-- content grid -->
     <div class="relative z-10 max-w-7xl mx-auto h-screen px-6 flex items-center md:items-start pt-[15vh]">
       <div class="w-full grid grid-cols-1 md:grid-cols-[220px_1fr_220px] items-center gap-8">
-        
-        <!-- Left stats -->
+
+        <!-- LEFT STATS (tablet/desktop) -->
         <div class="hidden md:block text-xs uppercase tracking-[.12em] text-gray-300 space-y-5">
           <div>
             <div class="mb-1">Engine</div>
@@ -52,59 +46,107 @@
           </div>
           <div>
             <div class="mb-1">Power</div>
-            <div class="text-white font-semibold normal-case">510 HP</div>
+            <div class="text-white font-semibold normal-case">
+              <span class="count" data-target="510">0</span> HP
+            </div>
           </div>
           <div>
             <div class="mb-1">Torque</div>
-            <div class="text-white font-semibold normal-case">470 Nm</div>
+            <div class="text-white font-semibold normal-case">
+              <span class="count" data-target="470">0</span> Nm
+            </div>
           </div>
         </div>
 
-        <!-- Center Title & Text -->
+        <!-- CENTER -->
         <div class="text-center">
           <h1 class="text-6xl md:text-7xl font-bold tracking-tight mb-4">Porsche 911 GT3 RS</h1>
           <p class="text-gray-300 max-w-xl mx-auto">
             A study in motion and control — precision engineered for those who never lift.
           </p>
           <div class="mt-8 flex justify-center gap-3">
-            <a href="#explore"
-               class="px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition">
-              Explore Model
-            </a>
-            <a href="#specs"
-               class="px-6 py-3 rounded-full border border-white/30 hover:bg-white/10 transition">
-              Full Specs
-            </a>
+            <a href="#explore" class="px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition">Explore Model</a>
+            <a href="#specs" class="px-6 py-3 rounded-full border border-white/30 hover:bg-white/10 transition">Full Specs</a>
+          </div>
+
+          <!-- MOBILE STATS BAR -->
+          <div class="mt-8 grid grid-cols-3 gap-2 md:hidden">
+            <div class="rounded-xl bg-white/5 border border-white/10 py-3">
+              <div class="text-[10px] uppercase tracking-wider text-white/60">Power</div>
+              <div class="text-lg font-semibold"><span class="count" data-target="510">0</span><span class="text-white/70 text-sm"> hp</span></div>
+            </div>
+            <div class="rounded-xl bg-white/5 border border-white/10 py-3">
+              <div class="text-[10px] uppercase tracking-wider text-white/60">0–100</div>
+              <div class="text-lg font-semibold"><span class="count" data-target="3.2" data-decimals="1">0</span><span class="text-white/70 text-sm"> s</span></div>
+            </div>
+            <div class="rounded-xl bg-white/5 border border-white/10 py-3">
+              <div class="text-[10px] uppercase tracking-wider text-white/60">Top Speed</div>
+              <div class="text-lg font-semibold"><span class="count" data-target="312">0</span><span class="text-white/70 text-sm"> km/h</span></div>
+            </div>
           </div>
         </div>
 
-        <!-- Right stats -->
+        <!-- RIGHT STATS (tablet/desktop) -->
         <div class="hidden md:block text-right text-xs uppercase tracking-[.12em] text-gray-300 space-y-5">
           <div>
             <div class="mb-1">Top Speed</div>
-            <div class="text-white font-semibold normal-case">312 km/h</div>
+            <div class="text-white font-semibold normal-case"><span class="count" data-target="312">0</span> km/h</div>
           </div>
           <div>
             <div class="mb-1">0–100 km/h</div>
-            <div class="text-white font-semibold normal-case">3.2 s</div>
+            <div class="text-white font-semibold normal-case"><span class="count" data-target="3.2" data-decimals="1">0</span> s</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Time indicator -->
+    <!-- clock -->
     <div class="absolute bottom-6 left-6 z-10 text-sm text-white/70">
       Stuttgart · <span id="clock">—</span>
     </div>
   </section>
 
   <script>
-    // Live clock in bottom corner
-    setInterval(() => {
-      document.getElementById("clock").textContent =
-        new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-    }, 1000);
-  </script>
+    // live clock
+    setInterval(()=>{document.getElementById('clock').textContent=
+      new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});},1000);
 
+    // count-up on first view
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const items = [...document.querySelectorAll('.count')];
+      if (!items.length) return;
+
+      function animate(el){
+        const target = parseFloat(el.dataset.target);
+        const decimals = parseInt(el.dataset.decimals||'0',10);
+        const duration = 1200; // ms
+        const start = performance.now();
+        const startVal = 0;
+
+        function tick(now){
+          const p = Math.min((now - start)/duration, 1);
+          // easeOutCubic
+          const eased = 1 - Math.pow(1 - p, 3);
+          const val = startVal + (target - startVal) * (prefersReduced ? 1 : eased);
+          el.textContent = val.toFixed(decimals);
+          if (p < 1 && !prefersReduced) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      let started = false;
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if (e.isIntersecting && !started){
+            started = true;
+            items.forEach(animate);
+            io.disconnect();
+          }
+        });
+      }, {threshold: 0.35});
+      io.observe(document.body.querySelector('section'));
+    })();
+  </script>
 </body>
 </html>
