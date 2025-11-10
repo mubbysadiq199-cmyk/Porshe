@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Porsche 911 GT3 RS — Full Specs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero-mask:after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.35) 35%, rgba(0,0,0,.85));
+      pointer-events:none;
+    }
+    .card{ background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+           border:1px solid rgba(255,255,255,.12); }
+  </style>
+</head>
+<body class="bg-black text-white antialiased">
+
+  <!-- HERO -->
+  <section class="relative min-h-[60vh] overflow-hidden hero-mask">
+    <img src="./assets/Porsche.jpg" alt="Porsche 911 GT3 RS"
+         class="absolute inset-0 w-full h-full object-cover brightness-[.8]" />
+    <header class="relative z-10">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="./index.html" class="font-semibold tracking-wide uppercase text-white/80 hover:text-white">GT Vision</a>
+        <nav class="hidden md:flex gap-6 text-sm text-white/80">
+          <a href="./index.html#performance" class="hover:text-white">Performance</a>
+          <a href="./index.html#design" class="hover:text-white">Design</a>
+          <a href="./specs.html" class="text-white">Specs</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-[10vh] pb-[8vh]">
+      <p class="text-white/70 uppercase tracking-[.18em] text-xs">Full Technical Data</p>
+      <h1 class="text-4xl md:text-6xl font-bold mt-2">Porsche 911 GT3 RS</h1>
+      <p class="max-w-2xl text-white/80 mt-4">Numbers that speak for themselves — engineered for lap time, built for precision.</p>
+    </div>
+  </section>
+
+  <!-- SPECS GRID -->
+  <main class="max-w-7xl mx-auto px-6 py-12 space-y-10">
+
+    <!-- Headline Stats -->
+    <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card rounded-2xl p-5">
+        <div class="text-white/60 text-xs uppercase tracking-widest">Power</div>
+        <div class="mt-1 text-3xl font-semibold">
+          <span class="count" data-target="386">0</span><span class="text-lg align-top"> kW</span>
+          <span class="text-white/60 text-sm"> / </span>
+          <span class="count" data-target="525">0</span><span class="text-lg align-top"> PS</span>
+          <span class="text-white/60 text-sm"> (</span><span class="count" data-target="518">0</span><span class="text-lg align-top"> hp</span><span class="text-white/60 text-sm">)</span>
+        </div>
+        <p class="text-white/60 text-sm mt-2">Naturally aspirated 4.0L flat-six @ 8,500 rpm.</p>
+      </div>
+
+      <div class="card rounded-2xl p-5">
+        <div class="text-white/60 text-xs uppercase tracking-widest">Torque</div>
+        <div class="mt-1 text-3xl font-semibold">
+          <span class="count" data-target="465">0</span><span class="text-lg align-top"> Nm</span>
+        </div>
+        <p class="text-white/60 text-sm mt-2">Peak torque @ 6,300 rpm.</p>
+      </div>
+
+      <div class="card rounded-2xl p-5">
+        <div class="text-white/60 text-xs uppercase tracking-widest">0–100 km/h</div>
+        <div class="mt-1 text-3xl font-semibold">
+          <span class="count" data-target="3.2" data-decimals="1">0</span><span class="text-lg align-top"> s</span>
+        </div>
+        <p class="text-white/60 text-sm mt-2">Launch control with PDK.</p>
+      </div>
+
+      <div class="card rounded-2xl p-5">
+        <div class="text-white/60 text-xs uppercase tracking-widest">Top Speed</div>
+        <div class="mt-1 text-3xl font-semibold">
+          <span class="count" data-target="296">0</span><span class="text-lg align-top"> km/h</span>
+        </div>
+        <p class="text-white/60 text-sm mt-2">Seventh gear, aero-limited.</p>
+      </div>
+    </section>
+
+    <!-- Detailed Sections -->
+    <section class="grid lg:grid-cols-2 gap-5">
+      <div class="card rounded-2xl p-6">
+        <h2 class="text-xl font-semibold">Powertrain</h2>
+        <ul class="mt-3 space-y-2 text-white/80">
+          <li>Engine: 4.0-litre naturally aspirated flat-six</li>
+          <li>Max power: <span class="count" data-target="386">0</span> kW / <span class="count" data-target="525">0</span> PS (<span class="count" data-target="518">0</span> hp)</li>
+          <li>Max torque: <span class="count" data-target="465">0</span> Nm</li>
+          <li>Redline: <span class="count" data-target="9000">0</span> rpm</li>
+          <li>Induction: Individual throttle bodies, motorsport-derived valve gear</li>
+          <li>Transmission: 7-speed Porsche Doppelkupplung (PDK)</li>
+          <li>Drivetrain: Rear-wheel drive</li>
+        </ul>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <h2 class="text-xl font-semibold">Aerodynamics</h2>
+        <ul class="mt-3 space-y-2 text-white/80">
+          <li>Downforce @ 200 km/h: <span class="count" data-target="409">0</span> kg</li>
+          <li>Downforce @ 285 km/h: <span class="count" data-target="860">0</span> kg</li>
+          <li>Active aero with DRS (front & rear wing elements)</li>
+          <li>Central radiator layout; swan-neck rear wing (roof-height)</li>
+        </ul>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <h2 class="text-xl font-semibold">Chassis & Brakes</h2>
+        <ul class="mt-3 space-y-2 text-white/80">
+          <li>Front: 6-piston monobloc calipers, <span class="count" data-target="408">0</span> mm discs</li>
+          <li>Rear: 4-piston calipers, <span class="count" data-target="380">0</span> mm discs</li>
+          <li>PCCB option: 410 mm (F) / 390 mm (R)</li>
+          <li>Double-wishbone front axle with aero-profile links</li>
+          <li>Track modes with cockpit-adjustable damping & diff lock</li>
+        </ul>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <h2 class="text-xl font-semibold">Wheels & Tyres</h2>
+        <ul class="mt-3 space-y-2 text-white/80">
+          <li>Forged centre-lock wheels (std.)</li>
+          <li>Tyres: 275/35 R20 (front) — 335/30 R21 (rear)</li>
+        </ul>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <h2 class="text-xl font-semibold">Dimensions & Weight (EU)</h2>
+        <ul class="mt-3 space-y-2 text-white/80">
+          <li>Kerb weight (DIN): <span class="count" data-target="1450">0</span> kg</li>
+          <li>Seats: 2</li>
+        </ul>
+        <p class="text-white/60 text-sm mt-2">Weights and dimensions may vary by market & specification.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <h2 class="text-xl font-semibold">Consumption (WLTP, combined)</h2>
+        <ul class="mt-3 space-y-2 text-white/80">
+          <li>Fuel: ~<span class="count" data-target="13.4" data-decimals="1">0</span> l/100 km</li>
+          <li>CO₂: ~<span class="count" data-target="305">0</span> g/km</li>
+        </ul>
+        <p class="text-white/60 text-sm mt-2">EU model reference values.</p>
+      </div>
+    </section>
+
+    <!-- Sources -->
+    <footer class="text-white/50 text-xs pt-6">
+      Specs sourced from Porsche official materials and reputable automotive publications. See details in page notes.
+    </footer>
+  </main>
+
+  <!-- Count-up + Reduced Motion support -->
+  <script>
+    (function(){
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = Array.from(document.querySelectorAll('.count'));
+      if(!els.length) return;
+
+      function animate(el){
+        const target = parseFloat(el.dataset.target);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1300;
+        const start = performance.now();
+        const from = 0;
+
+        function frame(now){
+          const t = Math.min((now - start)/duration, 1);
+          const eased = prefersReduced ? 1 : 1 - Math.pow(1 - t, 3); // easeOutCubic
+          const val = from + (target - from) * eased;
+          el.textContent = val.toFixed(decimals);
+          if(t < 1 && !prefersReduced) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      let started = false;
+      const io = new IntersectionObserver((entries)=>{
+        for(const e of entries){
+          if(e.isIntersecting && !started){
+            started = true; els.forEach(animate); io.disconnect();
+          }
+        }
+      }, {threshold: 0.25});
+      io.observe(document.body);
+    })();
+  </script>
+</body>
+</html>
