@@ -3,36 +3,48 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Porsche GT Vision</title>
+  <title>Porsche 911 GT3 RS — Vision</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* optional: soft heat glow at bottom */
+    /* subtle ground glow */
     .heat:before {
-      content:"";
-      position:absolute; inset:0 0 auto 0; height:45%;
-      background: radial-gradient(80% 60% at 50% 100%, rgba(255,80,0,.22), transparent 70%);
-      pointer-events:none;
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 35%;
+      background: radial-gradient(80% 50% at 50% 100%, rgba(255, 80, 0, 0.08), transparent 70%);
+      pointer-events: none;
     }
   </style>
 </head>
+
 <body class="bg-black text-white antialiased">
-  <!-- HERO -->
+
+  <!-- HERO SECTION -->
   <section class="relative min-h-screen overflow-hidden heat">
-    <!-- background image -->
-    <img src="./assets/porsche.jpg" alt="Porsche front view"
-         class="absolute inset-0 w-full h-full object-cover brightness-[.78]" />
-    <!-- dark gradient for readability -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+    <!-- Background Image -->
+    <img src="./assets/porsche-side.jpg" alt="Porsche 911 GT3 RS side profile"
+         class="absolute inset-0 w-full h-full object-contain md:object-cover brightness-[.9]" />
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-    <!-- faint gigantic word -->
-    <div class="absolute inset-x-0 top-1/3 text-center select-none pointer-events-none">
-      <span class="text-[18vw] leading-none font-extrabold tracking-tight text-white/5">PORSCHE</span>
-    </div>
+    <!-- Top navigation -->
+    <header class="absolute top-0 inset-x-0 z-20">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div class="font-semibold tracking-wide uppercase text-white/80">GT Vision</div>
+        <nav class="hidden md:flex gap-6 text-sm text-white/80">
+          <a href="#performance" class="hover:text-white">Performance</a>
+          <a href="#design" class="hover:text-white">Design</a>
+          <a href="#specs" class="hover:text-white">Specs</a>
+        </nav>
+      </div>
+    </header>
 
-    <!-- content -->
-    <div class="relative z-10 max-w-7xl mx-auto h-screen px-6 flex items-center">
+    <!-- Main text -->
+    <div class="relative z-10 max-w-7xl mx-auto h-screen px-6 flex items-center md:items-start pt-[15vh]">
       <div class="w-full grid grid-cols-1 md:grid-cols-[220px_1fr_220px] items-center gap-8">
-        <!-- left stats -->
+        
+        <!-- Left stats -->
         <div class="hidden md:block text-xs uppercase tracking-[.12em] text-gray-300 space-y-5">
           <div>
             <div class="mb-1">Engine</div>
@@ -40,7 +52,7 @@
           </div>
           <div>
             <div class="mb-1">Power</div>
-            <div class="text-white font-semibold normal-case">510 hp</div>
+            <div class="text-white font-semibold normal-case">510 HP</div>
           </div>
           <div>
             <div class="mb-1">Torque</div>
@@ -48,11 +60,11 @@
           </div>
         </div>
 
-        <!-- center title -->
+        <!-- Center Title & Text -->
         <div class="text-center">
-          <h1 class="text-5xl md:text-7xl font-bold tracking-tight">911 GT3 RS</h1>
-          <p class="mt-4 max-w-xl mx-auto text-gray-300">
-            Born from motion. Engineered by obsession. Design in pursuit of precision.
+          <h1 class="text-6xl md:text-7xl font-bold tracking-tight mb-4">Porsche 911 GT3 RS</h1>
+          <p class="text-gray-300 max-w-xl mx-auto">
+            A study in motion and control — precision engineered for those who never lift.
           </p>
           <div class="mt-8 flex justify-center gap-3">
             <a href="#explore"
@@ -66,7 +78,7 @@
           </div>
         </div>
 
-        <!-- right stats -->
+        <!-- Right stats -->
         <div class="hidden md:block text-right text-xs uppercase tracking-[.12em] text-gray-300 space-y-5">
           <div>
             <div class="mb-1">Top Speed</div>
@@ -80,28 +92,19 @@
       </div>
     </div>
 
-    <!-- top nav (optional) -->
-    <header class="absolute top-0 inset-x-0 z-20">
-      <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <div class="font-semibold tracking-wide">GT Vision</div>
-        <nav class="hidden md:flex gap-6 text-sm text-white/80">
-          <a href="#performance" class="hover:text-white">Performance</a>
-          <a href="#features" class="hover:text-white">Features</a>
-          <a href="#quote" class="hover:text-white">Get a Quote</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- bottom timestamp (aesthetic) -->
+    <!-- Time indicator -->
     <div class="absolute bottom-6 left-6 z-10 text-sm text-white/70">
       Stuttgart · <span id="clock">—</span>
     </div>
   </section>
 
   <script>
-    // tiny clock for vibe
-    setInterval(()=>{ document.getElementById('clock').textContent =
-      new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}); }, 1000);
+    // Live clock in bottom corner
+    setInterval(() => {
+      document.getElementById("clock").textContent =
+        new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    }, 1000);
   </script>
+
 </body>
 </html>
