@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Porsche GT Vision</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* optional: soft heat glow at bottom */
+    .heat:before {
+      content:"";
+      position:absolute; inset:0 0 auto 0; height:45%;
+      background: radial-gradient(80% 60% at 50% 100%, rgba(255,80,0,.22), transparent 70%);
+      pointer-events:none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white antialiased">
+  <!-- HERO -->
+  <section class="relative min-h-screen overflow-hidden heat">
+    <!-- background image -->
+    <img src="./assets/porsche.jpg" alt="Porsche front view"
+         class="absolute inset-0 w-full h-full object-cover brightness-[.78]" />
+    <!-- dark gradient for readability -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+    <!-- faint gigantic word -->
+    <div class="absolute inset-x-0 top-1/3 text-center select-none pointer-events-none">
+      <span class="text-[18vw] leading-none font-extrabold tracking-tight text-white/5">PORSCHE</span>
+    </div>
+
+    <!-- content -->
+    <div class="relative z-10 max-w-7xl mx-auto h-screen px-6 flex items-center">
+      <div class="w-full grid grid-cols-1 md:grid-cols-[220px_1fr_220px] items-center gap-8">
+        <!-- left stats -->
+        <div class="hidden md:block text-xs uppercase tracking-[.12em] text-gray-300 space-y-5">
+          <div>
+            <div class="mb-1">Engine</div>
+            <div class="text-white font-semibold normal-case">4.0L Flat-6</div>
+          </div>
+          <div>
+            <div class="mb-1">Power</div>
+            <div class="text-white font-semibold normal-case">510 hp</div>
+          </div>
+          <div>
+            <div class="mb-1">Torque</div>
+            <div class="text-white font-semibold normal-case">470 Nm</div>
+          </div>
+        </div>
+
+        <!-- center title -->
+        <div class="text-center">
+          <h1 class="text-5xl md:text-7xl font-bold tracking-tight">911 GT3 RS</h1>
+          <p class="mt-4 max-w-xl mx-auto text-gray-300">
+            Born from motion. Engineered by obsession. Design in pursuit of precision.
+          </p>
+          <div class="mt-8 flex justify-center gap-3">
+            <a href="#explore"
+               class="px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition">
+              Explore Model
+            </a>
+            <a href="#specs"
+               class="px-6 py-3 rounded-full border border-white/30 hover:bg-white/10 transition">
+              Full Specs
+            </a>
+          </div>
+        </div>
+
+        <!-- right stats -->
+        <div class="hidden md:block text-right text-xs uppercase tracking-[.12em] text-gray-300 space-y-5">
+          <div>
+            <div class="mb-1">Top Speed</div>
+            <div class="text-white font-semibold normal-case">312 km/h</div>
+          </div>
+          <div>
+            <div class="mb-1">0–100 km/h</div>
+            <div class="text-white font-semibold normal-case">3.2 s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- top nav (optional) -->
+    <header class="absolute top-0 inset-x-0 z-20">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div class="font-semibold tracking-wide">GT Vision</div>
+        <nav class="hidden md:flex gap-6 text-sm text-white/80">
+          <a href="#performance" class="hover:text-white">Performance</a>
+          <a href="#features" class="hover:text-white">Features</a>
+          <a href="#quote" class="hover:text-white">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- bottom timestamp (aesthetic) -->
+    <div class="absolute bottom-6 left-6 z-10 text-sm text-white/70">
+      Stuttgart · <span id="clock">—</span>
+    </div>
+  </section>
+
+  <script>
+    // tiny clock for vibe
+    setInterval(()=>{ document.getElementById('clock').textContent =
+      new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}); }, 1000);
+  </script>
+</body>
+</html>
